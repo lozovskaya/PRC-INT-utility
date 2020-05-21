@@ -32,7 +32,7 @@ class Widget(QWidget):
         self.SETline = QLineEdit()
         self.SETline.setReadOnly(True)
         self.analysis = QPushButton("Analyse")
-        #self.analysis.setEnabled(False)
+        self.analysis.setEnabled(False)
 
         self.right = QVBoxLayout()
         self.right.setMargin(5)
@@ -53,9 +53,9 @@ class Widget(QWidget):
         self.DATbtn.clicked.connect(self.getfileDAT)
         self.INFbtn.clicked.connect(self.getfileINF)
         self.SETbtn.clicked.connect(self.getfileSET)
-        #self.DATline.textChanged[str].connect(self.check_disable)
-        #self.INFline.textChanged[str].connect(self.check_disable)
-        #self.SETline.textChanged[str].connect(self.check_disable)
+        self.DATline.textChanged[str].connect(self.check_disable)
+        self.INFline.textChanged[str].connect(self.check_disable)
+        self.SETline.textChanged[str].connect(self.check_disable)
         self.analysis.clicked.connect(self.fill_table)
         
         '''terminal = QSplitter(Qt.Vertical)
