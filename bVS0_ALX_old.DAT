@@ -1,0 +1,53 @@
+#VAR 12,0,      1,2,3,4,5,6,7,8,9,10,11,12 / MVDL DATA LANGUAGE IS USED!!!
+*
+bVS0_ALX.DAT                                                                /
+PRC PROCESSING                                                              /
+SMOLENSK_19 PROJECT, VS0/ALX, 1.0 S                                         /
+*
+#SEL  1,11/    '#PG' 22 -1 -1  0  / PROCESSING CODE & REGIMES
+*
+'VS0_.hed',  '00'      / HEADER FILENAME, RECORDS SUFFIX LIST
+'ALX_.hed',  '7H'      / HEADER FILENAME, RECORDS SUFFIX LIST
+*
+*              SELECT PREPROCESSING SCHEME:
+*              1 - STANDARD PREPROCESSING
+*              5 - DIFFERENTIAL PREPROCESSING
+*
+* 1  0  0  0  1  1  0  0 -1 -1   /  CENT,FUR,SEL,LOG,ERTYPE,ADM,,SP,FTF,LER
+  5  0  0  0  1 -1  0  0 -1 -1   /  CENT,FUR,SEL,LOG,ERTYPE,ADM,,SP,FTF.LER
+*
+  0  0  0  0  0  0  0  0  1  0   /  KDUMP
+*
+#SEL  1,11/   0  1  0  1  0041  0  0  0  0  -8   /  LFIL,LSEL,LSMO,NA,...,NT
+*
+#SEL  1,1/  0  0 .10 .10 .650 .650  .10  .10    4.756  64.  .10  .10 /TFIL,TSQ,ECT,ECH,..,TMIN,TMAX
+#SEL  2,2/  0  0 .11 .11 .650 .650  .11  .11    4.756 128.  .11  .11 /TFIL,TSQ,ECT,ECH,..,TMIN,TMAX
+#SEL  3,3/  0  0 .12 .12 .650 .650  .12  .12    4.756 256.  .12  .12 /TFIL,TSQ,ECT,ECH,..,TMIN,TMAX
+#SEL  4,4/  0  0 .13 .13 .650 .650  .13  .13    8.    512.  .13  .13 /TFIL,TSQ,ECT,ECH,..,TMIN,TMAX
+#SEL  5,5/  0  0 .14 .14 .700 .700  .14  .14   16.   1024.  .14  .14 /TFIL,TSQ,ECT,ECH,..,TMIN,TMAX
+#SEL  6,6/  0  0 .15 .15 .700 .700  .15  .15   32.   2048.  .15  .15 /TFIL,TSQ,ECT,ECH,..,TMIN,TMAX
+#SEL  7,7/  0  0 .16 .16 .700 .700  .16  .16   64.   4096.  .16  .16 /TFIL,TSQ,ECT,ECH,..,TMIN,TMAX
+#SEL  8,8/  0  0 .17 .17 .650 .650  .17  .17  128.   6000.  .17  .17 /TFIL,TSQ,ECT,ECH,..,TMIN,TMAX
+#SEL  9,9/  0  0 .18 .18 .650 .650  .18  .18  256.   9000.  .18  .18 /TFIL,TSQ,ECT,ECH,..,TMIN,TMAX
+#SEL 10,10/ 0  0 .19 .19 .650 .650  .19  .19  512.  12000.  .19  .19 /TFIL,TSQ,ECT,ECH,..,TMIN,TMAX
+#SEL 11,11/ 0  0 .20 .20 .650 .650  .20  .20  512.  12000.  .20  .20 /TFIL,TSQ,ECT,ECH,..,TMIN,TMAX
+#SEL 12,12/ 0  0 .21 .21 .650 .650  .21  .21  512.  12000.  .21  .21 /TFIL,TSQ,ECT,ECH,..,TMIN,TMAX
+*
+* SELECTION   CORRECTION  SHIFT      VAR STP VARAV
+*
+#SEL  1,1/   -1     256  1    -0.  -0.   67     001  10 20100  / DATA SELECTION CYCLE
+#SEL  2,2/   -1     512  1    -0.  -0.   67     001  10 20200  / DATA SELECTION CYCLE
+#SEL  3,3/   -1    1024  1    -0.  -0.   67     001  10 20300  / DATA SELECTION CYCLE
+#SEL  4,4/   -1    2048  1    -0.  -0.   67     001  10 20400  / DATA SELECTION CYCLE
+#SEL  5,5/   -1    4096  1    -0.  -0.   67     001  10 20500  / DATA SELECTION CYCLE
+#SEL  6,6/   -1    8192  1    -0.  -0.   67     001  10 20600  / DATA SELECTION CYCLE
+#SEL  7,7/   -1   16384  1    -0.  -0.   38     001  10 20700  / DATA SELECTION CYCLE
+#SEL  8,8/   -1    8192  3    -0.  -0.   28     001  10 20800  / DATA SELECTION CYCLE
+#SEL  9,9/   -1   32768  1    -0.  -0.   18     001  10 20900  / DATA SELECTION CYCLE
+#SEL 10,10/  -1    8192  5    -0.  -0.   14     001  10 21000  / DATA SELECTION CYCLE
+#SEL 11,11/  -1   16384  3    -0.  -0.   12     001  10 21100  / DATA SELECTION CYCLE
+#SEL 12,12/  -1   65536  1    -0.  -0.    8     001  10 21200  / DATA SELECTION CYCLE
+*
+'#END'                            /  VARIANT END
+*
+STOP                              /  PROCESSING END
